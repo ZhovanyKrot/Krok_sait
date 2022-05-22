@@ -1,0 +1,122 @@
+﻿@model Krok_Site.Models.WorkPlan
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>WorkPlan</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Groups.GroupName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Groups.GroupName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Students.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Students.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Subjects.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Subjects.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Semester)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Semester)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeAll)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeAll)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LectionTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LectionTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LaboratoryTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LaboratoryTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConsultationTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConsultationTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.exam)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.exam)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Credit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Credit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CourseWork)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CourseWork)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Degree)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Degree)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Credits)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Credits)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

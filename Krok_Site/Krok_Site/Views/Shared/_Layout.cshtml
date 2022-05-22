@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Off-Canvas Navigation w/Page Transitions</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+
+    <link rel="stylesheet" href="/Content/style.css">
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+
+</head>
+
+<body>
+
+    <!-- https://www.pinterest.com/pin/75576099974715878/ -->
+    <div class="nav__bar">
+        <a href="#" class="nav__trigger">
+            <div class="bars"></div>
+        </a>
+    </div>
+
+    <main class="main">
+
+        <section class="content">
+
+            @RenderBody()
+
+        </section>
+    </main>
+    <div>
+        <nav class="nav">
+            <ul class="nav__list">
+
+
+                <li class="nav__item">
+                    @Html.ActionLink("Розклад", "Index", "TimeTables")
+                </li>
+                <li class="nav__item">
+                    @Html.ActionLink("Hавчальний план", "Index", "WorkPlans")
+                </li>
+                <li class="nav__item">
+                    @Html.ActionLink("Список", "Index", "Students")
+                </li>
+                <li class="nav__item">
+                    @Html.ActionLink("Електронний журнал", "Index", "LiabilityStatistics")
+                </li>
+                
+              
+            </ul>
+        </nav>
+    </div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/classlist/2014.01.31/classList.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/iamdustan-smoothscroll/0.4.0/smoothscroll.js'></script>
+
+
+
+    <script src="/Content/index.js"></script>
+
+    <main class="main">
+
+
+        <section class="content">
+
+            <hr />
+            <footer>
+            </footer>
+
+
+        </section>
+    </main>
+
+
+</body>
+
+</html>
+

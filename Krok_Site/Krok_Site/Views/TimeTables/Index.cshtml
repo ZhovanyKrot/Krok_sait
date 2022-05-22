@@ -1,0 +1,110 @@
+﻿@model IEnumerable<Krok_Site.Models.TimeTables>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div id="top">
+    <h2>Розклад </h2>
+
+    <p aling-content="center">
+        @Html.ActionLink("Create New", "Create")
+    </p>
+
+    @using (Html.BeginForm())
+    {
+        <p>
+
+
+            Subject :  @Html.DropDownList("SubjectName", " ")
+            Group   :  @Html.DropDownList("GroupName", " ")
+            Department   :  @Html.DropDownList("DepartmentName", " ")
+
+
+            <input type="submit" value="Обновить">
+        </p>
+
+    }
+
+</div>
+
+<table class="table" border="1">
+    <tr>
+
+        <td>Date</td>
+        <td>Time</td>
+        <td>Subject </td>
+        <td>TypeLesson</td>
+        <td>Auditory</td>
+        <td>Professor</td>
+        <td>NomberPair</td>
+
+
+    </tr>
+    @foreach (var item in Model.GroupBy(i => i.DateTime))
+    {
+        <tr>
+
+            <td>
+                @foreach (var i in item)
+                {
+                    @i.DateTime <br />
+                }
+
+            </td>
+            <td>
+                @foreach (var i in item)
+                {
+                    <p>
+                        @Html.DisplayFor(modelItem => i.Time)
+                    </p>
+                }
+            </td>
+
+            <td>
+                @foreach (var i in item)
+                {
+                    <p>
+                        @Html.DisplayFor(modelItem => i.Subjects.Name)
+                    </p>
+                }
+            </td>
+            <td>
+                @foreach (var i in item)
+                {
+                    <p>
+                        @Html.DisplayFor(modelItem => i.TipeLesson)
+                    </p>
+                }
+            </td>
+            <td>
+                @foreach (var i in item)
+                {
+                    <p>
+                        @Html.DisplayFor(modelItem => i.LectureHall)
+                    </p>
+                }
+            </td>
+            <td>
+                @foreach (var i in item)
+                {
+                    <p>
+                        @Html.DisplayFor(modelItem => i.Professors.Name)
+                    </p>
+                }
+            </td>
+            <td>
+                @foreach (var i in item)
+                {
+                    <p>
+                        @Html.DisplayFor(modelItem => i.NomberPair)
+                    </p>
+                }
+            </td>
+
+
+
+
+        </tr>
+    }
+</table>

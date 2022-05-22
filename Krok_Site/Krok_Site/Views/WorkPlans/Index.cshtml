@@ -1,0 +1,106 @@
+﻿@model IEnumerable<Krok_Site.Models.WorkPlan>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h2>Навчальний План</h2>
+
+@using (Html.BeginForm())
+{
+    <p>
+
+
+        @Html.DropDownList("GroupName", "Группа")
+        @Html.DropDownList("CourseNumber", "Курс")
+        @Html.DropDownList("SubjectName", "Предмет")
+
+        <input type="submit" value="Обновить">
+    </p>
+}
+
+<table class="table" border="1">
+    <tr>
+        <td>
+            Група
+        </td>
+        <td>
+            Предмет
+        </td>
+        <th>
+            Семестр
+        </th>
+        <th>
+            Годин
+        </th>
+        <th>
+            Лекції
+        </th>
+        <th>
+            Лабораторні
+        </th>
+        <th>
+            Консультації
+        </th>
+        <th>
+            Екзаменаційні
+        </th>
+        <th>
+            Диф. залік
+        </th>
+        <th>
+            Курсова робота
+        </th>
+        <th>
+            Дипломна робота
+        </th>
+        <th>
+            Кредіт
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Groups.GroupName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subjects.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Semester)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeAll)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LectionTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LaboratoryTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConsultationTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.exam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Credit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseWork)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Degree)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Credits)
+            </td>
+
+        </tr>
+    }
+
+</table>

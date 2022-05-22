@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Krok_Site.Models.LiabilityStatistics>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+    <h2>Електронний журнал</h2>
+
+@using (Html.BeginForm())
+{
+    <p>
+        @Html.DropDownList("Mounth", " ")
+        @Html.DropDownList("DepatentName", " ")
+        @Html.DropDownList("GroupName", " ")
+        @Html.DropDownList("CourseNumber", " ")
+
+        <input type="submit" value="Обновить">
+    </p>
+}
+<table class="table" border="1">
+    <tr>
+        <td rowspan="2">
+            @Html.DisplayNameFor(model => model.Students.Id)
+        </td>
+        <td rowspan="2">
+            @Html.DisplayNameFor(model => model.Students.Name)
+        </td>
+
+        <th colspan="3" align="center">
+            @Html.DisplayNameFor(model => model.Responsebles.Mounth)
+        </th>
+    </tr>
+
+
+
+    <tr>
+
+
+        <td>
+            @Html.DisplayNameFor(model => model.Responsebles.Passes)
+        </td>
+        <td>
+            @Html.DisplayNameFor(model => model.Responsebles.GoodReason)
+        </td>
+        <td>
+            @Html.DisplayNameFor(model => model.Responsebles.NotGoodReason)
+        </td>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Students.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Students.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Responsebles.Passes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Responsebles.GoodReason)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Responsebles.NotGoodReason)
+            </td>
+
+
+
+
+        </tr>
+    }
+
+</table>

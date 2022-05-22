@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Krok_Site.Models.Students>
+
+@{
+    ViewBag.Title = "Список Студентів";
+}
+
+
+
+<h2>Cписок </h2>
+
+
+<!--@*@using (Html.BeginForm())
+{
+    <p>-->
+
+        Course:  @Html.DropDownList("GroupName", " ")
+        <!--Group:   @Html.DropDownList("CourseNumber", " ")*@
+        <input type="submit" value="Обновить">
+    </p>
+
+}-->
+
+<table class="table" border="1">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Groups.GroupName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+
+
+    </tr>
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Groups.GroupName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+
+
+        </tr>
+    }
+
+</table>
